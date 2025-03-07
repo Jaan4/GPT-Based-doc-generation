@@ -1,3 +1,8 @@
+import sys
+import streamlit as st
+
+st.write("Python executable path:", sys.executable)
+
 from git_integration import GitManager
 from collaboration import CollaborationManager
 from api_docs import APIDocumentationGenerator
