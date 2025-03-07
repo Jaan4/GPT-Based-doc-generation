@@ -1,8 +1,8 @@
 import sys
+import platform
 import streamlit as st
-
 st.write("Python executable path:", sys.executable)
-
+st.write("Operating System:", platform.system())
 from git_integration import GitManager
 from collaboration import CollaborationManager
 from api_docs import APIDocumentationGenerator
