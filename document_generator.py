@@ -63,9 +63,10 @@ class DocumentGenerator:
 
         try:
             prompt = self._create_prompt(code, analysis)
-            response = ollama.chat(model="some_model", messages=messages)
-
-            
+            response = ollama.chat(
+                model=self.model_name,
+                messages=[{"role": "user", "content": prompt}]
+            )
             # Check if the response has the expected format
             if 'message' in response and 'content' in response['message']:
                 return response['message']['content']
